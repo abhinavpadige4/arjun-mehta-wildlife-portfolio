@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery — Arjun Mehta</title>
+<meta name="description" content="Full gallery of wildlife photography by Arjun Mehta — safari, tundra, rainforest, ocean, desert, wetland. Filter by habitat and view full-resolution frames.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/gallery.css">
+<link rel="stylesheet" href="css/footer.css">
+<script>
+tailwind.config={theme:{extend:{colors:{bg:'#0B0F0D',surface:'#141A17',surface_alt:'#1B2320',border:'#2A342F',text:'#F2EDE4',muted:'#9AA39C',accent:'#D4A24C',accent_hover:'#E8B968',danger:'#C0392B'},fontFamily:{display:['"Playfair Display"','Georgia','serif'],sans:['Inter','system-ui','sans-serif']}}}}
+</script>
+</head>
+<body class="bg-bg text-text font-sans antialiased">
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav class="site-nav" aria-label="Primary">
+  <div class="container nav-inner">
+    <a href="/" class="nav-brand">
+      <span class="brand-mark">AM</span>
+      <span class="brand-text">Arjun Mehta</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/gallery.html" aria-current="page">Gallery</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main">
+  <header class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Portfolio · 2012–2026</p>
+      <h1 class="page-title">Gallery</h1>
+      <p class="page-sub">A curated archive of fieldwork across six biomes — from the Serengeti plains to the Arctic tundra. Filter by habitat, click any frame to view full resolution.</p>
+    </div>
+  </header>
+
+  <div class="filter-bar" id="filterBar">
+    <div class="container filter-inner">
+      <div class="filter-chips" role="tablist" aria-label="Filter by habitat">
+        <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="chip" data-filter="safari" role="tab" aria-selected="false">Safari</button>
+        <button class="chip" data-filter="tundra" role="tab" aria-selected="false">Tundra</button>
+        <button class="chip" data-filter="rainforest" role="tab" aria-selected="false">Rainforest</button>
+        <button class="chip" data-filter="ocean" role="tab" aria-selected="false">Ocean</button>
+        <button class="chip" data-filter="desert" role="tab" aria-selected="false">Desert</button>
+        <button class="chip" data-filter="wetland" role="tab" aria-selected="false">Wetland</button>
+      </div>
+      <div class="filter-meta">
+        <span id="photoCount" class="muted small">Loading…</span>
+        <button id="sortToggle" class="btn-ghost btn-sm" aria-label="Toggle sort order">Sort: Newest</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="container gallery-section" aria-label="Photo gallery">
+    <div id="galleryGrid" class="masonry" aria-live="polite"></div>
+    <div id="emptyState" class="empty-state hidden">
+      <p>No photographs in this habitat yet. Check back soon.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <p class="brand-text">Arjun Mehta</p>
+      <p class="muted small">Wildlife &amp; Conservation Photography</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/gallery.html">Gallery</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="mailto:hello@arjunmehta.photo">hello@arjunmehta.photo</a></li>
+        <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://500px.com" target="_blank" rel="noopener">500px</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Studio</h4>
+      <p class="muted small">14 Cedar Lane, Bandra West<br>Mumbai, India 400050</p>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p class="small muted">© 2026 Arjun Mehta. All images protected under copyright.</p>
+  </div>
+</footer>
+
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Photo viewer">
+  <button class="lb-close" aria-label="Close viewer">×</button>
+  <button class="lb-prev" aria-label="Previous photo">‹</button>
+  <button class="lb-next" aria-label="Next photo">›</button>
+  <figure class="lb-figure">
+    <img id="lbImg" src="" alt="">
+    <figcaption class="lb-caption">
+      <h3 id="lbTitle"></h3>
+      <p id="lbMeta" class="muted small"></p>
+      <p id="lbCaption" class="small"></p>
+    </figcaption>
+  </figure>
+</div>
+
+<script src="js/nav.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/lightbox.js"></script>
+</body>
+</html>
