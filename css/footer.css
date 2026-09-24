@@ -1,0 +1,294 @@
+/* ============================================================
+   css/footer.css — Footer styles for Arjun Mehta portfolio
+   Dark surface, multi-column layout, social icons, back-to-top
+   ============================================================ */
+
+/* ---------- Footer shell ---------- */
+.site-footer {
+  background: var(--color-surface, #141A17);
+  border-top: 1px solid var(--color-border, #2A342F);
+  color: var(--color-text, #F2EDE4);
+  font-family: var(--font-body, 'Inter', system-ui, sans-serif);
+  padding: 4rem 0 0;
+  position: relative;
+}
+
+.footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ---------- Multi-column grid ---------- */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 2.5rem;
+  padding-bottom: 3rem;
+}
+
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+}
+
+/* ---------- Column headings ---------- */
+.footer-col-title {
+  font-family: var(--font-display, 'Playfair Display', Georgia, serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-accent, #D4A24C);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+}
+
+/* ---------- Brand column ---------- */
+.footer-brand-name {
+  font-family: var(--font-display, 'Playfair Display', Georgia, serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text, #F2EDE4);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.footer-brand-tagline {
+  font-size: 0.875rem;
+  color: var(--color-muted, #9AA39C);
+  line-height: 1.6;
+  max-width: 28ch;
+  margin-bottom: 1.25rem;
+}
+
+/* ---------- Nav links ---------- */
+.footer-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-nav-list a {
+  color: var(--color-muted, #9AA39C);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+  display: inline-block;
+}
+
+.footer-nav-list a:hover,
+.footer-nav-list a:focus-visible {
+  color: var(--color-accent-hover, #E8B968);
+}
+
+/* ---------- Social icons ---------- */
+.footer-social {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border, #2A342F);
+  color: var(--color-muted, #9AA39C);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.social-icon:hover,
+.social-icon:focus-visible {
+  color: var(--color-accent, #D4A24C);
+  border-color: var(--color-accent, #D4A24C);
+  transform: translateY(-2px);
+}
+
+.social-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+/* ---------- Newsletter column ---------- */
+.footer-newsletter-text {
+  font-size: 0.875rem;
+  color: var(--color-muted, #9AA39C);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.footer-newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.footer-newsletter-input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.6rem 0.85rem;
+  background: var(--color-surface-alt, #1B2320);
+  border: 1px solid var(--color-border, #2A342F);
+  border-radius: 6px;
+  color: var(--color-text, #F2EDE4);
+  font-size: 0.875rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.footer-newsletter-input::placeholder {
+  color: var(--color-muted, #9AA39C);
+}
+
+.footer-newsletter-input:focus {
+  border-color: var(--color-accent, #D4A24C);
+}
+
+.footer-newsletter-btn {
+  padding: 0.6rem 1rem;
+  background: var(--color-accent, #D4A24C);
+  color: var(--color-bg, #0B0F0D);
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  white-space: nowrap;
+}
+
+.footer-newsletter-btn:hover {
+  background: var(--color-accent-hover, #E8B968);
+}
+
+.footer-newsletter-btn:focus-visible {
+  outline: 2px solid var(--color-accent, #D4A24C);
+  outline-offset: 2px;
+}
+
+/* ---------- Divider ---------- */
+.footer-divider {
+  border: none;
+  border-top: 1px solid var(--color-border, #2A342F);
+  margin: 0;
+}
+
+/* ---------- Copyright row ---------- */
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 0;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-copyright {
+  font-size: 0.8rem;
+  color: var(--color-muted, #9AA39C);
+}
+
+.footer-copyright a {
+  color: var(--color-accent, #D4A24C);
+  text-decoration: none;
+}
+
+.footer-copyright a:hover {
+  text-decoration: underline;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.footer-legal a {
+  font-size: 0.8rem;
+  color: var(--color-muted, #9AA39C);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-legal a:hover {
+  color: var(--color-accent-hover, #E8B968);
+}
+
+/* ---------- Back-to-top button ---------- */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-accent, #D4A24C);
+  color: var(--color-bg, #0B0F0D);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  z-index: 90;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: var(--color-accent-hover, #E8B968);
+  transform: translateY(-2px);
+}
+
+.back-to-top:focus-visible {
+  outline: 2px solid var(--color-text, #F2EDE4);
+  outline-offset: 3px;
+}
+
+.back-to-top svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .social-icon,
+  .back-to-top,
+  .footer-nav-list a,
+  .footer-newsletter-btn {
+    transition: none;
+  }
+
+  .back-to-top {
+    transition: opacity 0.1s ease, visibility 0.1s ease;
+  }
+}
